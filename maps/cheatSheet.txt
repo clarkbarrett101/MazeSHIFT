@@ -1,0 +1,40 @@
+00 : Empty
+01 - 03 : Wall Blocks
+04 - 06 : Lock Block
+07 : X Block
+08 : O Block
+09 : Player Start
+...
+10 : Key Pawn
+11 : Key B
+11 : Key C
+12 : Switch Pawn
+18 : Exit
+...
+20 : Lock Block > 4
+21 : Lock B > 5
+22 : Lock C > 6
+...
+30 : Switch Pawn > 12
+...
+40 : X Block > 07
+...
+50 : O Block > 08
+...
+08 : Exit > 18
+98 : 
+99 : 
+
+Walls: 
+00 : Red        (1,0,0)
+01 : Orange     (1,.5,0)
+02 : Yellow     (1,1,0)
+03 : Jade       (.5,1,0)
+04 : Green      (0,1,0)
+05 : Turqouise  (0,1,.5)
+06 : Cyan       (0,1,1)
+07 : Indigo     (0,.5,1)
+08 : Blue       (0,0,1)
+09 : Violet     (.5,0,1)
+10 : Magenta    (1,0,1)
+11 : Pink       (1,0,.5)
