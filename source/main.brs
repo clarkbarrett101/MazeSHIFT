@@ -58,10 +58,6 @@ FUNCTION StartLevel(level)
     player = Actor()
     player.SetPos(map1.playerPos[0], map1.playerPos[1])
     player.SetDir(-1, 0)
-    blink = CreateObject("roAudioResource", "pkg:/soundeffects/blink.wav")
-
-    bleep = CreateObject("roAudioResource", "pkg:/soundeffects/bleepBloop.wav")
-    player.SetSounds(blink, bleep)
     msg = CreateObject("roMessagePort")
     screen.SetMessagePort(msg)
     ipt = InputTracker()
@@ -123,11 +119,10 @@ FUNCTION Update(player, screen, deltaTime AS float, map, ipt, walls)
     CastView(map, player, screen, walls, player.fov)
 
     IF player.transition
-
         IF player.fov < 150
             player.fov += 1440 * deltaTime
         ELSE
-            blink = CreateObject("roAudioResource", "pkg:/sounds/blink.wav")
+            blink = CreateObject("roAudioResource", "navmulti")
             blink.trigger(50)
             player.fov = 150
             player.shift = true
@@ -172,7 +167,8 @@ FUNCTION Update(player, screen, deltaTime AS float, map, ipt, walls)
     END IF
     IF ipt.interact AND player.interactable
         ipt.interact = false
-        player.bleep.trigger(50)
+        bleep = CreateObject("roAudioResource", "select")
+        bleep.trigger(50)
         player.interactPawn.interaction(player, map)
     END IF
 END FUNCTION
