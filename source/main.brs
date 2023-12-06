@@ -1,6 +1,7 @@
 SUB Main()
     level = [Level_0(), Level_1(), Level_2(), Level_3(), Level_4()]
     levelindex = 4
+    Menu()
     WHILE true
         StartLevel(level[levelindex])
         levelindex += 1
